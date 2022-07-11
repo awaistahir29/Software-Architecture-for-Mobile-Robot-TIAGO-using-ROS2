@@ -10,7 +10,7 @@ For that, I have used STVL layer of the Navigation2 package which dynamically up
 # Spatio-Temporal Voxel Layer (STVL)
 -------------------------------------------------------------------------------
 ## Introduction
-In this analysis, the performance of the [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) was tested, using a simulated turtlebot3 robot equipped with an RGBD camera, according to some benchmarks:
+The [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) is used to update  local and global costmap, using a simulated TIAGO robot. We manually atached RGBD Kinect sensor at the head of the TIAGO in the simulation then we needed to perform the transformation with respect to the base_link which has been performed 
 - CPU consumption given different voxel sizes
 - RAM usage given different voxel sizes
 - Other qualitative observations
