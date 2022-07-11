@@ -10,11 +10,7 @@ For that, I have used STVL layer of the Navigation2 package which dynamically up
 # Spatio-Temporal Voxel Layer (STVL)
 -------------------------------------------------------------------------------
 ## Introduction
-The [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) is used to update  local and global costmap, using a simulated TIAGO robot. We manually atached RGBD Kinect sensor at the head of the TIAGO in the simulation then we needed to perform the transformation with respect to the base_link which has been performed 
-- CPU consumption given different voxel sizes
-- RAM usage given different voxel sizes
-- Other qualitative observations
-
+The [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) is used to update  local and global costmap, using a simulated TIAGO robot. We manually atached RGBD Kinect sensor at the head of the TIAGO in the simulation then we needed to perform the transformation with respect to the base_link which has been performed.
 Additionally, lab experiments will be conducted on the **TIAGo** robot from **PAL Robotics** to confirm our simulations.
 
 ## Procedure
@@ -30,23 +26,21 @@ The simulation was run on [WeBots](https://cyberbotics.com/) and monitored on [R
 
 ### 2. Environment Building
 To test the STVL plugin, we needed test environments through which to run the simulated robot. For this purpose, Webots is used to build the environments and SLAM was used to map them. Additionally, the map is provided by the package simulation of **TIAGo Iron**. So, we can use any of the options as we have given the map we just need to give position and goal using rviz.
+### 4. Kinect Integration
+
+#### Transformation Node
+To attach the kinect sensor to the robot the node has been made which basically performs the transformation of the kinect with respect ro the base_link.
+The Kinect sensor is added manually in the simulation but the problem was the time at which it was publishing the data was not syncrinozed with the robot. For that we simply turned off the the use_sim_time parameter. 
 ### 3. Mapping with SLAM
 We chose the SLAM toolbox to map our environments as it was the quickest option available to us. The toolbox was installed through apt, following the nav2 documentation ["Navigating While Mapping"](https://navigation.ros.org/tutorials/docs/navigation2_with_slam.html).  
 <br>
 With **TIAGo Iron**, running SLAM is very simple: the TIAGO simulation is called through its launch file, as per usual and we just need to set *True* the parameters that we want to use. Either we can use already given map or we can build map using slam toolbox.
 Then, using [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard), we explored the entire environment whilst mapping it, and then we saved the map through the map_saver_cli node, as detailed in the nav2 documentation ["Map Saver / Saver"](https://navigation.ros.org/configuration/packages/configuring-map-server.html).
 
-## Testing
-Our costmap inflation layer was configured to use a radius of 0.40. The RGBD camera equipped on turtlebot3 was configured to have a horizontal FOV of 180°.
+## Navigation Package
+In navigation package we modified parameter server to add the STVL Layyer which subscribe the pointcloud2 information of the kinect sensor and use this information to correct the local and global costmap.
 <br>
-STVL can be configured to use different voxel sizes, meaning different levels of resolution in representing 3D environments. 
 
-### Test 1
-
-### Test 2
-
-
-### Other observations
 
 
 ### Conclusions
