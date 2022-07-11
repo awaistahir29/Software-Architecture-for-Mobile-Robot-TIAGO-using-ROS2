@@ -26,27 +26,23 @@ The simulation was run on [WeBots](https://cyberbotics.com/) and monitored on [R
 
 ### 2. Environment Building
 To test the STVL plugin, we needed test environments through which to run the simulated robot. For this purpose, Webots is used to build the environments and SLAM was used to map them. Additionally, the map is provided by the package simulation of **TIAGo Iron**. So, we can use any of the options as we have given the map we just need to give position and goal using rviz.
-### 4. Kinect Integration
+### 3. Kinect Integration
 
 #### Transformation Node
 To attach the kinect sensor to the robot the node has been made which basically performs the transformation of the kinect with respect ro the base_link.
 The Kinect sensor is added manually in the simulation but the problem was the time at which it was publishing the data was not syncrinozed with the robot. For that we simply turned off the the use_sim_time parameter. 
-### 3. Mapping with SLAM
+### 4. Mapping with SLAM
 We chose the SLAM toolbox to map our environments as it was the quickest option available to us. The toolbox was installed through apt, following the nav2 documentation ["Navigating While Mapping"](https://navigation.ros.org/tutorials/docs/navigation2_with_slam.html).  
 <br>
 With **TIAGo Iron**, running SLAM is very simple: the TIAGO simulation is called through its launch file, as per usual and we just need to set *True* the parameters that we want to use. Either we can use already given map or we can build map using slam toolbox.
 Then, using [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard), we explored the entire environment whilst mapping it, and then we saved the map through the map_saver_cli node, as detailed in the nav2 documentation ["Map Saver / Saver"](https://navigation.ros.org/configuration/packages/configuring-map-server.html).
-
-## Navigation Package
-In navigation package we modified parameter server to add the STVL Layyer which subscribe the pointcloud2 information of the kinect sensor and use this information to correct the local and global costmap.
 <br>
-
-
-
+### Navigation Package
+In navigation package we modified parameter server to add the STVL Layyer which subscribe the pointcloud2 information of the kinect sensor and use this information to correct the local and global costmap.
 ### Conclusions
 To sum it all up, the whole architecture is made correct local and global costmaps that allow the robot to navigate correctly in the environment in presense of obstaces like Table, or any risen obstacle which was not mapped by the Lidar sensor.
 
-## Encountered Issues
+### Encountered Issues
 We have faced a lot of challanges while deploying all these things. 
 Initially, We have used complex webot package **TIAGO** and then configured its launch file to use multiple functionalities integrated with the robot simulation. 
 Thereafter, navigation2 package has been modified in order to use depth information to project this dynamic depth information onto the map so that local and global planner can plan the correct trajectory to reach the goal.
