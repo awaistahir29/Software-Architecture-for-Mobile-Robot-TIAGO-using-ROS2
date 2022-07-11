@@ -8,7 +8,6 @@ The work has been performed to improve the fuctionalities of mobile robot (TIAGO
 For that, I have used STVL layer of the Navigation2 package which dynamically updating the local ad global map by using depth information of the kinect sensor. This helps navigating in the environment safely without colliding with the dynamic or static obstacles (like Table) which were not detected by the map which built by the Lidar sensor connected at the bottom of the robot.
 
 # Spatio-Temporal Voxel Layer (STVL)
--------------------------------------------------------------------------------
 ## Introduction
 The [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) is used to update  local and global costmap, using a simulated TIAGO robot. We manually atached RGBD Kinect sensor at the head of the TIAGO in the simulation then we needed to perform the transformation with respect to the base_link which has been performed.
 Additionally, lab experiments will be conducted on the **TIAGo** robot from **PAL Robotics** to confirm our simulations.
