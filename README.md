@@ -2,10 +2,10 @@
 # Software-Architecture-for-Mobile-Robot-TIAGO
 The work has been performed to improve the fuctionalities of mobile robot (TIAGO) by integrating complex packages in order to detect and avoid risen dynamic obstacle which has not provided by the given map which helps local and global planner to make correct path planning. This helps to avoid collision of the mobile robot (TIAGO). 
 ## Problem
-  Mobile Robot like TIAGO build the map or use already given map which is provided using the sensor(Lidar) that has placed at the bottom in order to navigate in the environment. Basically, It usually build the map by using the information from the LIDAR sensor which is placed at the bottom of the TIAGO and can't detect and map the obstacles which are above the ground like TABLE.
+  Mobile Robot like TIAGO build the map or use already given map which is provided using the sensor(Lidar) that has placed at the bottom in order to navigate in the environment. Basically, It usually build the map by using the information from the LIDAR sensor which is placed at the bottom of the TIAGO and can't detect and map the high risen obstacles like TABLE.
 ## Solution 
   In order to navigate in the environment by corrected map, the integration of the RGB-D(Kinect) sensor with the TIAGO has been done to use depth information to correct the map.
-For that, I have used STVL layer of the Navigation2 package which dynamically updating the local ad global map by using depth information of the kinect sensor. This helps navigating in the envirnment safely without colliding with the dynamic or static obstacles (like Table) which were not detected by the map which built by the Lidar sensor connected at the bottom of the robot.
+For that, I have used STVL layer of the Navigation2 package which dynamically updating the local ad global map by using depth information of the kinect sensor. This helps navigating in the environment safely without colliding with the dynamic or static obstacles (like Table) which were not detected by the map which built by the Lidar sensor connected at the bottom of the robot.
 
 # Spatio-Temporal Voxel Layer (STVL)
 -------------------------------------------------------------------------------
