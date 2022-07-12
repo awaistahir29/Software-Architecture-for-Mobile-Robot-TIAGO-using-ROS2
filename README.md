@@ -27,7 +27,10 @@ $ source install local/setup.bash
 $ sudo apt-get install ros-galactic-spatio-temporal-voxel-layer
 ```
 - Install webots package using [Webots](https://github.com/cyberbotics/webots_ros2/wiki/Build-and-Install)
-
+To launch the Tiago with Navigation package with whole implemetation.
+```
+$ ros2 launch webots_ros2_tiago robot_launch.py
+```
 # Spatio-Temporal Voxel Layer (STVL)
 ## Introduction
 The [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) is used to update  local and global costmap, using a simulated TIAGO robot. We manually atached RGBD Kinect sensor at the head of the TIAGO in the simulation then we needed to perform the transformation with respect to the base_link which has been performed.
