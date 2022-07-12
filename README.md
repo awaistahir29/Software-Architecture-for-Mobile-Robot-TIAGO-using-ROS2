@@ -62,7 +62,7 @@ In navigation package we modified parameter server to add the STVL Layyer which 
 ### Conclusion
 To sum it all up, the whole architecture is made correct local and global costmaps that allow the robot to navigate correctly in the environment in presense of obstaces like Table, or any risen obstacle which was not mapped by the Lidar sensor.
 
-![diagram]()
+![diagram](https://github.com/awaistahir29/Software-Architecture-for-Mobile-Robot-TIAGO-using-ROS2/blob/main/UML.png)
 
 ### Encountered Issues
 We have faced a lot of challanges while deploying all these things. 
