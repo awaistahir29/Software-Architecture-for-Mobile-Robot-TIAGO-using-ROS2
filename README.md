@@ -9,6 +9,11 @@ For that, I have used STVL layer of the Navigation2 package which dynamically up
 
 ## Quick Start
 - Install [ROS2 Galactic](https://docs.ros.org/en/galactic/Installation/Alternatives/Ubuntu-Development-Setup.html)
+- Install the STVL package and the webots package:
+```
+$ sudo apt-get install ros-galactic-spatio-temporal-voxel-layer
+```
+- Install webots package using [Webots](https://github.com/cyberbotics/webots_ros2/wiki/Build-and-Install)
 - Clone this repository in a new workspace and build it:
 ```
 $ mkdir my_ros2_ws && cd my_ros2_ws && mkdir src && cd src
@@ -22,12 +27,7 @@ $ git checkout nav2
 $ cd .. && colcon build
 $ source install local/setup.bash
 ```
-- Install the STVL package and the webots package:
-```
-$ sudo apt-get install ros-galactic-spatio-temporal-voxel-layer
-```
-- Install webots package using [Webots](https://github.com/cyberbotics/webots_ros2/wiki/Build-and-Install)
-To launch the Tiago with Navigation package with whole implemetation.
+- To launch the Tiago with Navigation package with whole implemetation.
 ```
 $ ros2 launch webots_ros2_tiago robot_launch.py
 ```
