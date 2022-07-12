@@ -18,7 +18,7 @@ $ source install local/setup.bash
 ```
 - For Navigation package checkout to the galactic branch
 ```
-$ git checkout galactic
+$ git checkout nav2
 $ cd .. && colcon build
 $ source install local/setup.bash
 ```
