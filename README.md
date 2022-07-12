@@ -62,6 +62,8 @@ In navigation package we modified parameter server to add the STVL Layyer which 
 ### Conclusion
 To sum it all up, the whole architecture is made correct local and global costmaps that allow the robot to navigate correctly in the environment in presense of obstaces like Table, or any risen obstacle which was not mapped by the Lidar sensor.
 
+![diagram]()
+
 ### Encountered Issues
 We have faced a lot of challanges while deploying all these things. 
 Initially, We have used complex webot package **TIAGO** and then configured its launch file to use multiple functionalities integrated with the robot simulation. 
