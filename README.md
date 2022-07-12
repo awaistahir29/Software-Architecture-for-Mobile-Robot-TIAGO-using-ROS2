@@ -16,6 +16,12 @@ $ git clone https://github.com/awaistahir29/Software-Architecture-for-Mobile-Rob
 $ cd .. && colcon build
 $ source install local/setup.bash
 ```
+- For Navigation package checkout to the galactic branch
+```
+$ git checkout galactic
+$ cd .. && colcon build
+$ source install local/setup.bash
+```
 - Install the STVL package and the webots package:
 ```
 $ sudo apt-get install ros-galactic-spatio-temporal-voxel-layer
