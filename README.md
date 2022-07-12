@@ -7,6 +7,21 @@ The work has been performed to improve the fuctionalities of mobile robot (TIAGO
   In order to navigate in the environment by corrected map, the integration of the RGB-D(Kinect) sensor with the TIAGO has been done to use depth information to correct the map.
 For that, I have used STVL layer of the Navigation2 package which dynamically updating the local ad global map by using depth information of the kinect sensor. This helps navigating in the environment safely without colliding with the dynamic or static obstacles (like Table) which were not detected by the map which built by the Lidar sensor connected at the bottom of the robot.
 
+## Quick Start
+- Install [ROS2 Galactic](https://docs.ros.org/en/galactic/Installation/Alternatives/Ubuntu-Development-Setup.html)
+- Clone this repository in a new workspace and build it:
+```
+$ mkdir my_ros2_ws && cd my_ros2_ws && mkdir src && cd src
+$ git clone https://github.com/awaistahir29/Software-Architecture-for-Mobile-Robot-TIAGO-using-ROS2.git
+$ cd .. && colcon build
+$ source install local/setup.bash
+```
+- Install the STVL package and the webots package:
+```
+$ sudo apt-get install ros-galactic-spatio-temporal-voxel-layer
+```
+- Install webots package using [Webots](https://github.com/cyberbotics/webots_ros2/wiki/Build-and-Install)
+
 # Spatio-Temporal Voxel Layer (STVL)
 ## Introduction
 The [Spatio-Temporal Voxel Layer](https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/galactic) is used to update  local and global costmap, using a simulated TIAGO robot. We manually atached RGBD Kinect sensor at the head of the TIAGO in the simulation then we needed to perform the transformation with respect to the base_link which has been performed.
@@ -38,7 +53,7 @@ Then, using [teleop_twist_keyboard](http://wiki.ros.org/teleop_twist_keyboard), 
 <br>
 ### Navigation Package
 In navigation package we modified parameter server to add the STVL Layyer which subscribe the pointcloud2 information of the kinect sensor and use this information to correct the local and global costmap.
-### Conclusions
+### Conclusion
 To sum it all up, the whole architecture is made correct local and global costmaps that allow the robot to navigate correctly in the environment in presense of obstaces like Table, or any risen obstacle which was not mapped by the Lidar sensor.
 
 ### Encountered Issues
